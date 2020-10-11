@@ -1,0 +1,47 @@
+@startuml
+
+title Mastermind - Estado inical - Héctor Garcia
+
+object Mastermind
+
+object Board 
+object Player
+
+object Goal
+
+Goal : -winner = false
+
+object SecretCombination
+
+object Piece1
+object Piece2
+object Piece3
+object Piece4
+object Piece5
+
+object Red
+object Blue
+object Green
+object Yellow
+object Pink
+
+Mastermind *--> Player
+Mastermind *--> Board
+
+Player --> Goal
+
+Board --> SecretCombination
+
+SecretCombination *--> Piece1
+SecretCombination *--> Piece2
+SecretCombination *--> Piece3
+SecretCombination *--> Piece4
+SecretCombination *--> Piece5
+
+Piece1 *--> Red
+Piece2 *--> Blue
+Piece3 *--> Green
+Piece4 *--> Yellow
+Piece5 *--> Pink
+
+@enduml

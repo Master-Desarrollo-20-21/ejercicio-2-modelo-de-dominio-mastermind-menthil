@@ -1,0 +1,106 @@
+@startuml
+
+title Mastermind - Estado final - Héctor Garcia
+
+object Mastermind
+
+object Board 
+object Player
+
+object Goal
+
+Goal : -winner = true
+
+object SecretCombination
+
+object ScPiece1
+object ScPiece2
+object ScPiece3
+object ScPiece4
+object ScPiece5
+
+object Red
+object Blue
+object Green
+object Yellow
+object Pink
+object White
+object Black
+object Brown
+
+object ProposedCombination1
+object ProposedCombination2
+
+object Pc1Piece1
+object Pc1Piece2
+object Pc1Piece3
+object Pc1Piece4
+object Pc1Piece5
+object Pc2Piece1
+object Pc2Piece2
+object Pc2Piece3
+object Pc2Piece4
+object Pc2Piece5
+
+object Result1
+object Result2
+
+object WhiteSuccess
+object BlackSuccess
+
+Mastermind *--> Player
+Mastermind *--> Board
+
+Player --> Goal
+
+Board --> SecretCombination
+
+Goal ..> Result2
+
+SecretCombination *--> ScPiece1
+SecretCombination *--> ScPiece2
+SecretCombination *--> ScPiece3
+SecretCombination *--> ScPiece4
+SecretCombination *--> ScPiece5
+
+ProposedCombination1 *--> Pc1Piece1
+ProposedCombination1 *--> Pc1Piece2
+ProposedCombination1 *--> Pc1Piece3
+ProposedCombination1 *--> Pc1Piece4
+ProposedCombination1 *--> Pc1Piece5
+ProposedCombination2 *--> Pc2Piece1
+ProposedCombination2 *--> Pc2Piece2
+ProposedCombination2 *--> Pc2Piece3
+ProposedCombination2 *--> Pc2Piece4
+ProposedCombination2 *--> Pc2Piece5
+
+ScPiece1 *--> Red
+ScPiece2 *--> Blue
+ScPiece3 *--> Green
+ScPiece4 *--> Yellow
+ScPiece5 *--> Pink
+
+Pc1Piece1 *--> Blue
+Pc1Piece2 *--> White
+Pc1Piece3 *--> Green
+Pc1Piece4 *--> Brown
+Pc1Piece5 *--> Black
+Pc2Piece1 *--> Red
+Pc2Piece2 *--> Blue
+Pc2Piece3 *--> Green
+Pc2Piece4 *--> Yellow
+Pc2Piece5 *--> Pink
+
+Player --> ProposedCombination1
+Player --> ProposedCombination2
+
+Board ..> ProposedCombination2
+
+Board --> Result1
+Board --> Result2
+
+Result1 *--> "1" WhiteSuccess
+Result1 *--> "1" BlackSuccess
+Result2 *--> "5" BlackSuccess
+
+@enduml

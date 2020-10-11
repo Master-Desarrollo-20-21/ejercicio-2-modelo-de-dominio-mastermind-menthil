@@ -1,0 +1,71 @@
+@startuml
+
+title Mastermind - Modelo de dominio - Héctor Garcia
+
+class Mastermind
+
+class Player
+class Board 
+
+Class Goal {
+    -winner
+}
+
+Class Combination
+Class SecretCombination
+Class ProposedCombination
+
+Class Piece
+
+Class Color
+
+Class Red
+Class Blue
+Class Green
+Class Yellow
+Class Pink
+Class White
+Class Black
+Class Brown
+
+Class Result
+
+Class Success
+
+Class BlackSuccess
+Class WhiteSuccess
+
+Mastermind *--> Player
+Mastermind *--> Board
+
+Player --> Goal
+Player --> "0..12" ProposedCombination
+
+Board --> SecretCombination
+Board --> "0..12" Result
+Board ..> "0..12" ProposedCombination
+
+Goal ..> Result
+
+Combination <|-- SecretCombination
+Combination <|-- ProposedCombination
+
+Combination *--> "5" Piece
+
+Piece *--> Color
+
+Color<|-- Red
+Color<|-- Blue
+Color<|-- Green
+Color<|-- Yellow
+Color<|-- Pink
+Color<|-- White
+Color<|-- Black
+Color<|-- Brown
+
+Result *--> "0..5" Success
+
+Success <|-- BlackSuccess
+Success <|-- WhiteSuccess
+
+@enduml

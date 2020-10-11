@@ -1,0 +1,14 @@
+@startuml
+
+title Mastermind - Diagrama de estados - Héctor Garcia 
+
+[*] --> InitialState: Make SecretCombination
+InitialState -> InGame: Propose Combination
+
+InGame -> InGame: Propose Combination
+InGame -> EndGame: [isWinner || 12 ProposedCombinations]
+
+EndGame -> InitialState: Make SecretCombination
+EndGame --> [*]: Exit Game
+
+@enduml
