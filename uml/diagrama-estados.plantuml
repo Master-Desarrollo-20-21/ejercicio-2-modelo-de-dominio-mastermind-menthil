@@ -1,6 +1,6 @@
 @startuml
 
-title Mastermind - Diagrama de estados - Héctor Garcia 
+title Mastermind - Diagrama de estados
 
 [*] --> InitialState: Make SecretCombination
 InitialState -> InGame: Propose Combination

@@ -1,6 +1,6 @@
 @startuml
 
-title Mastermind - Estado final - Héctor Garcia
+title Mastermind - Estado final
 
 object Mastermind
 

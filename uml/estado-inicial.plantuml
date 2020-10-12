@@ -1,6 +1,6 @@
 @startuml
 
-title Mastermind - Estado inical - Héctor Garcia
+title Mastermind - Estado inical
 
 object Mastermind
 

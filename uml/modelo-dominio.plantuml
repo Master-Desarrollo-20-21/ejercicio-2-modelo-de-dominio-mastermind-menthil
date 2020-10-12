@@ -1,6 +1,6 @@
 @startuml
 
-title Mastermind - Modelo de dominio - Héctor Garcia
+title Mastermind - Modelo de dominio
 
 class Mastermind
 
